@@ -1,0 +1,31 @@
+.resumo_financeiro {
+    display: flex;
+    align-items: center;
+    font-family: var(--font-family-1);
+}
+
+.resumo_financeiro>h2 {
+    color: var(--color-grey-1);
+    font-size: var(--font-size-1);
+    font-weight: var(--font-weight-2);
+
+}
+.botoes_resumo{
+display: flex;
+gap: 10px;
+}
+
+@media(max-width:670px) {
+    .resumo_financeiro {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+       
+    }
+}
+
+@media(min-width:671px) {
+    .resumo_financeiro {
+        justify-content: space-between;
+    }
+}
