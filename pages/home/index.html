@@ -13,10 +13,46 @@
     <link rel="stylesheet" href="/styles/nav.css">
     <link rel="stylesheet" href="/styles/main.css">
     <link rel="stylesheet" href="/styles/resumo.css">
+    <link rel="stylesheet" href="/styles/soma.css">
+    <link rel="stylesheet" href="/styles/vazio.css">
+    <link rel="stylesheet" href="/styles/valores.css">
+    <script src="https://kit.fontawesome.com/58c5cd4b82.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/styles/modal.css">
     <link rel="stylesheet" href="index.css">
 </head>
 
 <body>
+
+    <div class="modal hidden">
+        <div class="card">
+            <div class="header_modal">
+                <h2>Registro de valor</h2>
+                <button data-modal-button="cancelar" class="cancelar">X</button>
+            </div>
+            <p>Digite o valor e em seguida aperte no botão referente ao tipo do valor</p>
+            <div class="form_modal">
+                <label for="valor">Valor</label>
+                <div class="num_input">
+                    <span>R$</span>
+                    <input type="number" name="valor" id="valor" placeholder="00,00">
+                </div>
+                <div class="tipo_num">
+                    <p>Tipo de valor</p>
+                    <input type="radio" id="valor1" name="opcao" value="Entrada">
+                    <label for="valor1">Entrada</label>
+                    <input type="radio" id="valor2" name="opcao" value="Saída">
+                    <label for="valor2">Saída</label>
+                </div>
+                <div class="enviar_modal">
+                    <button class="cancelar" data-modal-button="cancelar">Cancelar</button>
+                    <button class="inserir" data-modal-button="inserir">Inserir valor</button>
+                </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
     <nav class="nav">
         <div class="itens_nav">
             <div class="logo">
@@ -35,9 +71,54 @@
                 <button data-botao-resumo="saidas" class="botao_resumo">Saídas</button>
             </div>
         </div>
+        <div class="soma_valores">
+            <h2>Soma dos valores</h2>
+            <p class="soma_total">R$0,00</p>
+        </div>
+        <div class="nenhum_item">
+            <h2>Nenhum valor cadastrado</h2>
+            <p>Registrar novo valor</p>
+        </div>
+        <ul class="valores">
+            <li>
+                <p>R$40,00</p>
+                <div class="detalhes">
+                    <p>Entrada</p>
+                    <button class="apagar_valor" data-botao-lixeira="apagar">
+                        <i class="fa-solid fa-trash"></i>
+                    </button>
+                </div>
+            </li>
+            <li>
+                <p>R$40,00</p>
+                <div class="detalhes">
+                    <p>Entrada</p>
+                    <button class="apagar_valor" data-botao-lixeira="apagar"><i class="fa-solid fa-trash"></i></button>
+                </div>
+            </li>
+            <li>
+                <p>R$40,00</p>
+                <div class="detalhes">
+                    <p>Entrada</p>
+                    <button class="apagar_valor" data-botao-lixeira="apagar"> <i class="fa-solid fa-trash"></i></button>
+                </div>
+            </li>
 
-
-
+            <li>
+                <p>R$40,00</p>
+                <div class="detalhes">
+                    <p>Entrada</p>
+                    <button class="apagar_valor" data-botao-lixeira="apagar"><i class="fa-solid fa-trash"></i></button>
+                </div>
+            </li>
+            <li>
+                <p>R$40,00</p>
+                <div class="detalhes">
+                    <p>Entrada</p>
+                    <button class="apagar_valor" data-botao-lixeira="apagar"> <i class="fa-solid fa-trash"></i></button>
+                </div>
+            </li>
+        </ul>
 
 
 
