@@ -10,16 +10,18 @@ botaoInserir.addEventListener("click", function () {
     } else {
         tipoEntrada = 1
     }
-
-
-    let tamanho = insertedValues.map(item => item.id).slice(-1)[0] + 1
+    let tamanho = 0
+    if (insertedValues.length == 0) {
+        tamanho = 0
+    } else {
+        tamanho = insertedValues.map(item => item.id).slice(-1)[0] + 1
+    }
 
     let obj = { id: tamanho, value: valorEntrada, categoryID: tipoEntrada }
     insertedValues.push(obj)
-    let numeros = insertedValues.map(item => item.value)
-    console.log(numeros)
-    let numeros_final = numeros.map(item => item = mudarSoma(item)).reduce((b, a) => a + b)
-        somar(numeros_final)
+
+    let numeros = insertedValues.map(item => item.value).map(item => item = mudarSoma(item)).reduce((b, a) => a + b)
+    somar(numeros)
     lista.innerHTML = ""
     insertedValues.forEach(item => criarValor(item))
 

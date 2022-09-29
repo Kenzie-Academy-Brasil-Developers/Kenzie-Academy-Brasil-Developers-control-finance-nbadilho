@@ -14,19 +14,13 @@ arrCategorias.forEach(item => item.addEventListener("click", function () {
     if (item.getAttribute("data-botao-resumo") == "Saída") {
         tipo = 1
     } else if (item.getAttribute("data-botao-resumo") == "Todos") {
-
-
-        let numeros = insertedValues.map(item => item.value)
-        let numeros_final = numeros.map(item => item = mudarSoma(item)).reduce((b, a) => a + b)
-        somar(numeros_final)
-
-
-        return insertedValues.forEach(obj => criarValor(obj))
+        let numeros = insertedValues.map(item => item.value).map(item => item = mudarSoma(item)).reduce((b, a) => a + b)
+        somar(numeros)
+        return insertedValues.forEach(obj => criarValor("Todos",obj))
     }
 
     let resultado = filtrar(tipo)
     let nums = resultado.map(valor => valor.value).map(item => item = mudarSoma(item)).reduce((b, a) => a + b)
-
 
     somar(nums)
     resultado.forEach(unico => criarValor(unico))
