@@ -1,13 +1,6 @@
 let lista = document.querySelector(".valores")
 
-function mudarValor(num) {
-    let string = num.toString()
-    let modificada = string.replace(".", ",")
-    return modificada
-
-}
-
-function criarValor({ value, categoryID }) {
+function criarValor({id, value, categoryID }) {
     lista.classList.add("appear")
     vazio.classList.remove("appear")
     let tipo = ""
@@ -25,6 +18,7 @@ function criarValor({ value, categoryID }) {
     categoria.innerText = tipo
     let botao = document.createElement("button")
     botao.classList.add("apagar_valor")
+    botao.id=id
     botao.setAttribute("data-botao-lixeira", "apagar")
     let img = document.createElement("i")
     img.classList.add("fa-solid")

@@ -24,9 +24,10 @@ arrCategorias.forEach(item => item.addEventListener("click", function () {
         num=1
     }
     let filtro = insertedValues.filter(obj => obj.categoryID == num)
-    if (insertedValues.length !== 0 || filtro.length==0) {
+    if (insertedValues.length == 0 || filtro.length==0) {
         montarVazio(item.getAttribute("data-botao-resumo"))
     }
 
 }))
+
 
