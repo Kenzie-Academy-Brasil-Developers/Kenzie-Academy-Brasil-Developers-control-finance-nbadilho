@@ -15,14 +15,17 @@ arrCategorias.forEach(item => item.addEventListener("click", function () {
     if (item.getAttribute("data-botao-resumo") == "Saída") {
         tipo = 1
     } else if (item.getAttribute("data-botao-resumo") == "Todos") {
-        let numeros = insertedValues.map(item => item.value).map(item => item = mudarSoma(item)).reduce((b, a) => a + b)
+        let numeros = insertedValues.map(item => item.value).map(item => item = mudarParaNum(item)).reduce((b, a) => a + b)
         somar(numeros)
-        return insertedValues.forEach(obj => criarValor(obj))
+        return insertedValues.forEach(obj => criarValorTodos(obj))
     }
 
     let resultado = filtrar(tipo)
-    let nums = resultado.map(valor => valor.value).map(item => item = mudarSoma(item)).reduce((b, a) => a + b)
-
+    if (resultado.length == 0) {
+        somar(0)
+        return montarVazio(item.getAttribute("data-botao-resumo"))
+    }
+    let nums = resultado.map(valor => valor.value).map(item => item = mudarParaNum(item)).reduce((b, a) => a + b)
     somar(nums)
     resultado.forEach(unico => criarValor(unico))
 
@@ -30,10 +33,8 @@ arrCategorias.forEach(item => item.addEventListener("click", function () {
 
 
 let numeros_todos = insertedValues.map(item => item.value).reduce((b, a) => a + b)
-somar(mudarValor(numeros_todos))
-
-
-insertedValues.forEach(obj => obj.value = mudarValor(obj.value))
-insertedValues.forEach(item => criarValor(item))
+somar(numeros_todos)
+insertedValues.forEach(obj => obj.value = mudarParaString(obj.value))
+insertedValues.forEach(item => criarValorTodos(item))
 
 

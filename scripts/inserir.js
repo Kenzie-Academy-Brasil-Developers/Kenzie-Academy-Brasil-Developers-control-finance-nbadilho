@@ -1,5 +1,6 @@
 let botaoInserir = document.querySelector(".inserir")
 
+
 function inserirValor(obj) {
     insertedValues.push(obj)
 }
@@ -21,13 +22,15 @@ botaoInserir.addEventListener("click", function () {
         novoid = insertedValues.map(item => item.id).slice(-1)[0] + 1
     }
 
-    let obj = { id: novoid, value: valorEntrada, categoryID: tipoEntrada }
+    let obj = { id: novoid, value: mudarParaString(mudarParaNum(valorEntrada)), categoryID: tipoEntrada }
     inserirValor(obj)
 
-    let soma_final = insertedValues.map(item => item.value).map(item => item = mudarSoma(item)).reduce((b, a) => a + b)
-    somar(soma_final)
+    let soma_inicial = insertedValues.map(item => item.value).map(item => item = mudarParaNum((item)))
+    let soma_final = soma_inicial.reduce((b, a) => a + b)
+   somar(soma_final)
+
     lista.innerHTML = ""
-    insertedValues.forEach(item => criarValor(item))
-    document.getElementById("valor").value=""
-    document.querySelector('input[name="opcao"]:checked').checked=false
+    insertedValues.forEach(obj => criarValor(obj))
+    document.getElementById("valor").value = ""
+    document.querySelector('input[name="opcao"]:checked').checked = false
 })
