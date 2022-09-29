@@ -1,6 +1,6 @@
 let lista = document.querySelector(".valores")
 
-function criarValor( { id, value, categoryID }) {
+function criarValor({ id, value, categoryID }) {
     lista.classList.add("appear")
     vazio.classList.remove("appear")
     let tipo = ""
@@ -26,20 +26,17 @@ function criarValor( { id, value, categoryID }) {
         removerValor(itemRemov)
         let tipos = insertedValues.filter(obj => categoryID == obj.categoryID)
 
-        if (tipos.length == 0 && itemRemov[0].categoryID == 1) {
+
+
+        if (tipos.length == 0 && itemRemov[0].categoryID == 1 ) {
             montarVazio("Saída")
         } else if (tipos.length == 0 && itemRemov[0].categoryID == 0 ) {
             montarVazio("Entrada")
-        }else if(insertedValues.length==0){
-            montarVazio("Todos")
         }
-
-
 
         if (tipos.length == 0) {
             return somar(0)
         }
-
         let numeros = tipos.map(item => item.value).map(item => item = mudarSoma(item)).reduce((b, a) => a + b)
         somar(numeros)
 

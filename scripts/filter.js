@@ -2,6 +2,7 @@ let insertedValuesfiltered = [];
 let soma = document.querySelector(".soma_total")
 
 
+
 function filtrar(id) {
     insertedValuesfiltered = []
     insertedValuesfiltered.push(insertedValues.filter(obj => obj.categoryID == id))
@@ -16,7 +17,7 @@ arrCategorias.forEach(item => item.addEventListener("click", function () {
     } else if (item.getAttribute("data-botao-resumo") == "Todos") {
         let numeros = insertedValues.map(item => item.value).map(item => item = mudarSoma(item)).reduce((b, a) => a + b)
         somar(numeros)
-        return insertedValues.forEach(obj => criarValor("Todos",obj))
+        return insertedValues.forEach(obj => criarValor(obj))
     }
 
     let resultado = filtrar(tipo)
