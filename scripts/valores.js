@@ -14,11 +14,13 @@ botaoInserir.addEventListener("click", function () {
 
     let tamanho = insertedValues.map(item => item.id).slice(-1)[0] + 1
 
-    let obj = { id: tamanho, value: Number(valorEntrada), categoryID: tipoEntrada }
-
+    let obj = { id: tamanho, value: valorEntrada, categoryID: tipoEntrada }
     insertedValues.push(obj)
-    lista.innerHTML=""
-    insertedValues.forEach(item=>criarValor(item))
+    let numeros = insertedValues.map(item => item.value)
+    console.log(numeros)
+    let numeros_final = numeros.map(item => item = mudarSoma(item)).reduce((b, a) => a + b)
+        somar(numeros_final)
+    lista.innerHTML = ""
+    insertedValues.forEach(item => criarValor(item))
 
 })
-

@@ -26,21 +26,21 @@ arrCategorias.forEach(item => item.addEventListener("click", function () {
         tipo = 1
     } else if (item.getAttribute("data-botao-resumo") == "Todos") {
         let numeros = insertedValues.map(item => item.value)
-        console.log(numeros)
         let numeros_final = numeros.map(item => item = mudarSoma(item)).reduce((b, a) => a + b)
         somar(numeros_final)
         return insertedValues.forEach(obj => criarValor(obj))
     }
     let resultado = filtrar(tipo)
-    let nums = resultado.map(valor => valor.value)
-    let soma_final = nums.map(item => item = mudarSoma(item)).reduce((b, a) => a + b)
-    somar(soma_final)
+    let nums = resultado.map(valor => valor.value).map(item => item = mudarSoma(item)).reduce((b, a) => a + b)
+    somar(nums)
     resultado.forEach(item => {
         criarValor(item)
     }
     )
 }))
 
+let numeros_todos = insertedValues.map(item => item.value).reduce((b, a) => a + b)
+somar(mudarValor(numeros_todos))
 insertedValues.forEach(obj => obj.value = mudarValor(obj.value))
 insertedValues.forEach(item => criarValor(item))
 
