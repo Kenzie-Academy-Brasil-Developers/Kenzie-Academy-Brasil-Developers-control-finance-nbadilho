@@ -23,17 +23,14 @@ arrCategorias.forEach(item => item.addEventListener("click", function () {
 
         return insertedValues.forEach(obj => criarValor(obj))
     }
-    let resultado = filtrar(tipo)
-    console.log(resultado)
 
+    let resultado = filtrar(tipo)
     let nums = resultado.map(valor => valor.value).map(item => item = mudarSoma(item)).reduce((b, a) => a + b)
 
 
     somar(nums)
-    resultado.forEach(item => {
-        criarValor(item)
-    }
-    )
+    resultado.forEach(unico => criarValor(unico))
+
 }))
 
 

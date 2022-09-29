@@ -6,6 +6,9 @@ function somar(valor) {
 
 function mudarValor(num) {
     let string = num.toString()
+    // if (string.contains(".") == false || string.contains(",") == false) {
+    //     string +",00"
+    // }
     let modificada = string.replace(".", ",")
     return modificada
 
