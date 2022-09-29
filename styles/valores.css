@@ -5,6 +5,11 @@
     flex-direction: column;
     margin-top: 25px;
     gap: 15px;
+    display: none;
+}
+
+.appear {
+    display: flex;
 }
 
 .valores>li {
@@ -40,7 +45,7 @@
     gap: 20px;
 }
 
-.detalhes>p,.cancelar {
+.detalhes>p {
     font-family: var(--font-family-1);
     font-size: var(--font-size-3);
     font-weight: var(--font-weight-1);
@@ -48,9 +53,12 @@
     padding: 7px 14px;
     background-color: var(--color-grey-5);
     border-radius: var(--radius-1);
+    text-align: center;
+    width: 90px;
 }
 
-.detalhes>:hover,.cancelar:hover {
+.detalhes>:hover,
+.cancelar:hover {
     color: var(--color-grey-1);
     background-color: var(--color-grey-4);
 }

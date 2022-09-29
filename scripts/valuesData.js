@@ -9,7 +9,7 @@ let insertedValues = [
   {
     id: 2,
     value: 40.0,
-    categoryID: 0,
+    categoryID: 2,
   },
   {
     id: 3,

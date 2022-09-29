@@ -34,7 +34,7 @@
                 <label for="valor">Valor</label>
                 <div class="num_input">
                     <span>R$</span>
-                    <input type="number" name="valor" id="valor" placeholder="00,00">
+                    <input type="number" class="valor" name="valor" id="valor" placeholder="00,00">
                 </div>
                 <div class="tipo_num">
                     <p>Tipo de valor</p>
@@ -65,66 +65,32 @@
         <div class="resumo_financeiro">
             <h2>Resumo financeiro</h2>
             <div class="botoes_resumo">
-                <button data-botao-resumo="todos" class="botao_resumo">Todos</button>
-                <button data-botao-resumo="entradas" class="botao_resumo">Entradas
+                <button data-botao-resumo="Todos" class="botao_resumo">Todos</button>
+                <button data-botao-resumo="Entrada" class="botao_resumo">Entradas
                 </button>
-                <button data-botao-resumo="saidas" class="botao_resumo">Saídas</button>
+                <button data-botao-resumo="Saída" class="botao_resumo">Saídas</button>
             </div>
         </div>
         <div class="soma_valores">
             <h2>Soma dos valores</h2>
-            <p class="soma_total">R$0,00</p>
+            <p class="soma_total">R$0.00</p>
         </div>
         <div class="nenhum_item">
-            <h2>Nenhum valor cadastrado</h2>
+            <h2 class="titulo_vazio">Nenhum valor cadastrado</h2>
             <p>Registrar novo valor</p>
         </div>
         <ul class="valores">
-            <li>
-                <p>R$40,00</p>
-                <div class="detalhes">
-                    <p>Entrada</p>
-                    <button class="apagar_valor" data-botao-lixeira="apagar">
-                        <i class="fa-solid fa-trash"></i>
-                    </button>
-                </div>
-            </li>
-            <li>
-                <p>R$40,00</p>
-                <div class="detalhes">
-                    <p>Entrada</p>
-                    <button class="apagar_valor" data-botao-lixeira="apagar"><i class="fa-solid fa-trash"></i></button>
-                </div>
-            </li>
-            <li>
-                <p>R$40,00</p>
-                <div class="detalhes">
-                    <p>Entrada</p>
-                    <button class="apagar_valor" data-botao-lixeira="apagar"> <i class="fa-solid fa-trash"></i></button>
-                </div>
-            </li>
-
-            <li>
-                <p>R$40,00</p>
-                <div class="detalhes">
-                    <p>Entrada</p>
-                    <button class="apagar_valor" data-botao-lixeira="apagar"><i class="fa-solid fa-trash"></i></button>
-                </div>
-            </li>
-            <li>
-                <p>R$40,00</p>
-                <div class="detalhes">
-                    <p>Entrada</p>
-                    <button class="apagar_valor" data-botao-lixeira="apagar"> <i class="fa-solid fa-trash"></i></button>
-                </div>
-            </li>
         </ul>
 
 
 
     </main>
+    <script src="/scripts/vazio.js"></script>
     <script src="/scripts/modal.js"></script>
     <script src="valuesData.js"></script>
+    <script src="/scripts/valores.js"></script>
+    <script src="/scripts/montarValor.js"></script>
+    <script src="/scripts/filter.js"></script>
     <script src="index.js"></script>
 </body>
 
