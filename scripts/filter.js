@@ -7,6 +7,14 @@ function filtrar(id) {
 }
 
 arrCategorias.forEach(item => item.addEventListener("click", function () {
+
+    if (arrCategorias.filter(obj => obj.classList.contains("foco")).length!==0) {
+        arrCategorias.forEach(item=>item.classList.remove("foco"))
+    }
+
+    item.classList.add("foco")
+
+
     lista.innerHTML = ""
     let tipo = 0
     if (item.getAttribute("data-botao-resumo") == "Saída") {
@@ -29,6 +37,7 @@ arrCategorias.forEach(item => item.addEventListener("click", function () {
 
 let numeros_todos = insertedValues.map(item => item.value)
 somar(numeros_todos)
+botaoTodos.classList.add("foco")
 insertedValues.forEach(obj => obj.value = mudarParaString(obj.value))
 insertedValues.forEach(item => criarValorTodos(item))
 

@@ -1,7 +1,7 @@
 let vazio = document.querySelector(".nenhum_item")
 let categorias = document.querySelectorAll("[data-botao-resumo]")
 let arrCategorias = [...categorias]
-
+let botaoTodos=arrCategorias.find(botao=>botao.getAttribute("data-botao-resumo")=="Todos")
 
 function montarVazio(tipo) {
     let titulo = document.querySelector(".titulo_vazio")

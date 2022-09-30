@@ -9,6 +9,13 @@ function inserirValor(obj) {
 }
 
 botaoInserir.addEventListener("click", function () {
+
+    if (arrCategorias.filter(obj => obj.classList.contains("foco")).length!==0) {
+        arrCategorias.forEach(item=>item.classList.remove("foco"))
+    }
+    botaoTodos.classList.add("foco")
+
+
     vazio.classList.remove("appear")
     let tipoEntrada = document.querySelector('input[name="opcao"]:checked').value
     let valorEntrada = document.querySelector(".valor").value
