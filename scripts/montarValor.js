@@ -26,8 +26,6 @@ function criarValor({ id, value, categoryID }) {
         removerValor(itemRemov)
         let tipos = insertedValues.filter(obj => categoryID == obj.categoryID)
 
-
-
         if (tipos.length == 0 && itemRemov[0].categoryID == 1 && tipos.length <= insertedValues.length) {
             montarVazio("Saída")
         } else if (tipos.length == 0 && itemRemov[0].categoryID == 0 && tipos.length <= insertedValues.length) {
@@ -38,10 +36,7 @@ function criarValor({ id, value, categoryID }) {
             return somar(0)
         }
 
-
-        let numeros = tipos.map(item => item.value).map(item => item = mudarParaNum(item)).reduce((b, a) => a + b)
-        console.log(numeros)
-        somar(numeros)
+        somar(tipos.map(item => item.value).map(item => item = mudarParaNum(item)))
 
     })
 
@@ -82,9 +77,7 @@ function criarValorTodos({ id, value, categoryID }) {
             montarVazio("Todos")
             return somar(0)
         } else {
-            let numeros = insertedValues.map(item => item.value).map(item => item = mudarParaNum(item)).reduce((b, a) => a + b)
-            console.log(numeros)
-            somar(numeros)
+            somar(insertedValues.map(item => item.value).map(item => item = mudarParaNum(item)))
         }
 
     })

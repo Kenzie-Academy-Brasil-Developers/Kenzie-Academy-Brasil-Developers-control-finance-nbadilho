@@ -28,17 +28,7 @@ input::-webkit-inner-spin-button {
     animation-duration: 0.7s;
     position: relative;
 }
-.cancelar{
-    font-family: var(--font-family-1);
-    font-size: var(--font-size-3);
-    font-weight: var(--font-weight-1);
-    color: var(--color-grey-2);
-    padding: 7px 14px;
-    background-color: var(--color-grey-5);
-    border-radius: var(--radius-1);
-    text-align: center;
-    width: max-content;
-}
+
 .header_modal {
     display: flex;
     align-items: center;
@@ -159,9 +149,6 @@ input::-webkit-inner-spin-button {
     }
 
 }
-
-
-
 
 .hidden {
     display: none;

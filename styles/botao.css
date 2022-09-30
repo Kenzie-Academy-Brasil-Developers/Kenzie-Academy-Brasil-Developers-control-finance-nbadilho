@@ -19,6 +19,17 @@ button:hover {
     transition: 0.3s ease;
 }
 
+.cancelar{
+    font-family: var(--font-family-1);
+    font-size: var(--font-size-3);
+    font-weight: var(--font-weight-1);
+    color: var(--color-grey-2);
+    padding: 7px 14px;
+    background-color: var(--color-grey-5);
+    border-radius: var(--radius-1);
+    text-align: center;
+    width: max-content;
+}
 
 .botao_resumo,.tipo_num>label{
     font-family: var(--font-grey-2);

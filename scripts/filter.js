@@ -1,7 +1,4 @@
 let insertedValuesfiltered = [];
-let soma = document.querySelector(".soma_total")
-
-
 
 function filtrar(id) {
     insertedValuesfiltered = []
@@ -15,8 +12,7 @@ arrCategorias.forEach(item => item.addEventListener("click", function () {
     if (item.getAttribute("data-botao-resumo") == "Saída") {
         tipo = 1
     } else if (item.getAttribute("data-botao-resumo") == "Todos") {
-        let numeros = insertedValues.map(item => item.value).map(item => item = mudarParaNum(item)).reduce((b, a) => a + b)
-        somar(numeros)
+        somar(insertedValues.map(item => item.value).map(item => item = mudarParaNum(item)))
         return insertedValues.forEach(obj => criarValorTodos(obj))
     }
 
@@ -25,14 +21,13 @@ arrCategorias.forEach(item => item.addEventListener("click", function () {
         somar(0)
         return montarVazio(item.getAttribute("data-botao-resumo"))
     }
-    let nums = resultado.map(valor => valor.value).map(item => item = mudarParaNum(item)).reduce((b, a) => a + b)
-    somar(nums)
+    somar(resultado.map(valor => valor.value).map(item => item = mudarParaNum(item)))
     resultado.forEach(unico => criarValor(unico))
 
 }))
 
 
-let numeros_todos = insertedValues.map(item => item.value).reduce((b, a) => a + b)
+let numeros_todos = insertedValues.map(item => item.value)
 somar(numeros_todos)
 insertedValues.forEach(obj => obj.value = mudarParaString(obj.value))
 insertedValues.forEach(item => criarValorTodos(item))
